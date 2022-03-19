@@ -6,3 +6,6 @@ def index(request):
 
 def login(request):
     return render(request,'index.html')
+
+def logout(request):
+    return HttpResponse('<h1>Logout Page')
