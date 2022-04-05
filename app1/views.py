@@ -18,4 +18,24 @@ def new(request):
 
 
 def last(request):
-    return render(request, 'last.html')    
+    return render(request, 'last.html') 
+
+
+def grid(request):
+    return render(request, 'grid.html')  
+
+
+def bootstrap_grid(request):
+    return render(request, 'bootstrap_grid.html')
+
+
+def js(request):
+    return render(request,'js.html')
+
+ 
+def jsNew(request):
+    return render(request,'jsNew.html')
+
+
+def jslang(request):
+    return render(request,'jslang.html')

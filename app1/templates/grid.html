@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    
+    <style>
+        @font-face {
+    font-family: "crimson_foam";
+    src: url("{% static 'fonts/crimson_foam.ttf' %}");
+}
+        #container{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto;
+            column-gap: 15px;
+            row-gap: 20px;
+        }
+        #container div{
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body style="font-family: crimson_foam; font-size: 50px;">
+    <div id="container">
+        <div style="background-color: red;">
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. A ducimus nemo quas totam odio! Soluta assumenda exercitationem accusamus corporis eius iusto, tenetur voluptatum, aliquam ipsum veritatis atque? Fugit, recusandae esse!
+            </p>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eum error eligendi aspernatur sapiente veniam maiores. Perferendis, neque ipsa! Odit atque eos corrupti itaque quia enim, culpa voluptate consectetur mollitia?
+            </p>
+        </div>
+        <div style="background-color: blue;">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus nobis, ut totam, cum dolor impedit fugit rem quis, in explicabo qui libero nihil perspiciatis delectus minima molestias autem officiis omnis!
+            </p>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam amet eius blanditiis nulla, inventore corporis sequi cumque, distinctio animi voluptas ratione repudiandae perspiciatis consectetur enim obcaecati ab nam? Officiis, iste.
+            </p>
+        </div>
+        <div style="background-color: aqua;">
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum delectus perferendis vero recusandae, ullam labore ipsum, explicabo quod minima optio repudiandae velit ipsa, sunt qui similique cupiditate eaque incidunt! Natus.
+            </p>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur amet, porro itaque corrupti id corporis inventore. Quidem sed ad tempora voluptates quia voluptatem autem, nisi nemo expedita itaque! Pariatur, vel?
+            </p>
+        </div>
+        <div>
+            <img src="{% static 'images/Screenshot (1).png' %}" width="50%" alt="">
+        </div>
+    </div>
+    <h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa atque vel officiis illo doloribus neque est reiciendis reprehenderit quisquam, possimus aliquid. Suscipit ducimus voluptas commodi ea, hic esse ratione pariatur.
+    </h1>
+    <button type="button" class="btn btn-danger">Danger</button>
+</body>
+</html>
