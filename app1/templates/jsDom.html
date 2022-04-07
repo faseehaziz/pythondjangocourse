@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        h = document.getElementsByTagName('h1')
+        console.log(h)
+        n = document.getElementsByTagName('p')
+        console.log(n)
+        m = document.getElementsByClassName('para2')
+        console.log(m)
+        function f1(){
+            document.getElementById('para1').innerHTML = 'Hello'
+            document.getElementById('para1').style = 'color: red'
+        }
+        function addition(){
+            a = parseInt(document.getElementById('text1').value)
+            b = parseInt(document.getElementById('text2').value)
+            sum = a + b
+            console.log(sum)
+            document.getElementById('head1').innerHTML = sum
+        }
+    </script>
+</head>
+<body>
+    <h1>Heading1</h1>
+    <p id="para1">
+        welcome to javascript
+    </p>
+    <p class = "para2" onmouseover="f1()">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis qui nulla sapiente esse. Vitae officia dolor impedit unde ducimus, obcaecati asperiores maxime error tenetur magnam dicta soluta natus id qui?
+    </p>
+    <button onclick="f1()">Click</button>
+    <br>
+    <input type="text" placeholder="Enter first number" id="text1"><br>
+    <input type="text" placeholder="Enter second number" id="text2"><br>
+    <button onclick="addition()">Sum</button>
+    <b id="head1" style="color: red;">
+
+    </b>
+</body>
+</html>

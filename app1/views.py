@@ -39,3 +39,11 @@ def jsNew(request):
 
 def jslang(request):
     return render(request,'jslang.html')
+
+
+def jsfunc(request):
+    return render(request,'jsfunc.html')
+
+
+def jsDom(request):
+    return render(request,'jsDom.html')
