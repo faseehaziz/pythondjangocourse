@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        .frm{
+            margin: 10px 200px;
+            padding: 50px;
+            border: 1px solid;
+        }
+        .b{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="frm">
+        <form action="">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+              <small id="b1" class="b"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="phone_number">Phone number</label>
+                <input type="number" class="form-control" id="phone_number" aria-describedby="emailHelp">
+                <small id="b2" class="b"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+              </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password">
+              <small id="b3" class="b"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="password2">Confirm password</label>
+                <input type="password" class="form-control" id="password2">
+                <small id="b4" class="b"></small>
+              </div>
+            <button type="submit" class="btn btn-danger btn-block" onclick="return validate()">Submit</button>
+        </form>
+    </div>
+    
+    <script>
+        function validate(){
+            status = 1
+            username = document.getElementById('name').value
+            console.log(username)
+            phone_number = document.getElementById('phone_number').value
+            console.log(phone_number)
+            email = document.getElementById('email').value
+            console.log(email)
+            password = document.getElementById('password').value
+            console.log(password)
+            password2 = document.getElementById('password2').value
+            console.log(password2)
+
+            if(username == ''){
+                document.getElementById('b1').innerHTML = 'Name cannot be null'
+                status = 0
+            }
+            else{
+                document.getElementById('b1').innerHTML = ''
+            }
+
+            
+            if(phone_number == ''){
+                document.getElementById('b2').innerHTML = 'Phone number cannot be null'
+                status = 0
+            }
+            else if(phone_number.length != 10){
+                document.getElementById('b2').innerHTML = 'Enter valid phone number'
+                status = 0
+            }
+            else{
+                document.getElementById('b2').innerHTML = ''
+            }
+
+            
+            if(password == ''){
+                document.getElementById('b3').innerHTML = 'Password cannot be null'
+                status = 0
+            }
+            else if(password.length < 6){
+                document.getElementById('b3').innerHTML = 'Password must contain at least 6 characters'
+                status = 0
+            }
+            else{
+                document.getElementById('b3').innerHTML = ''
+            }
+
+
+            if(password2 != password){
+                document.getElementById('b4').innerHTML = 'Password must be same'
+                status = 0
+            }
+            else{
+                document.getElementById('b4').innerHTML = ''
+            }
+
+
+            if(status == 0){
+                return false
+            }
+        }
+    </script>
+</body>
+</html>

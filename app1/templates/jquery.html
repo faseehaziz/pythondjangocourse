@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Hello</h1>
+    <p id="p1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, tempore odio asperiores mollitia sequi ipsa nobis a sapiente, aut necessitatibus similique vero voluptatibus consequatur voluptate dolor, aliquam accusantium? Culpa, aliquam.
+    </p>
+    <button id="b1">Click here</button>
+    <button id="b2">Show</button>
+    <div id="div1" style="background-color: aqua; width: 200px; height: 200px;">
+        This is div
+    </div>
+    <button id="b3">FadeOut</button>
+    <button id="b4">FadeToggle</button>
+    <div id="container" style="background-color: aqua; height: 200px; width: 200px;">
+        <h2>Hello</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum enim quibusdam odit quasi possimus modi debitis fugit soluta, aut eos non consequatur eveniet odio, inventore nihil! Nihil amet ducimus consequuntur.
+        </p>
+    </div>
+    <script>
+        // $('h1').remove()
+        console.log($('h1').html())
+        $('h1').html('Hi')
+        $('#container').empty()
+        $('#container').addClass('test')
+        console.log($('.test').width())
+        $('.test').height('300px')
+        console.log($('.test').height())
+        
+        
+        
+        $(document).ready(function(){
+            $('#p1').css('background-color', 'red')
+            console.log('hello')
+        });
+        $('#b1').click(function(){
+            $('#p1').hide()
+        });
+        $('#b2').click(function(){
+            $('#p1').toggle()
+        });
+        $('#b3').click(function(){
+            $('#div1').fadeOut()
+        })
+        $('#b4').click(function(){
+            $('#div1').fadeToggle()
+        })    
+    </script>
+</body>
+</html>

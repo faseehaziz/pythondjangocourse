@@ -13,5 +13,8 @@ urlpatterns = [
     path('jsNew', views.jsNew, name = 'jsNew'),
     path('jslang', views.jslang, name = 'jslang'),
     path('jsfunc', views.jsfunc, name = 'jsfunc'),
-    path('jsDom', views.jsDom, name = 'jsDom')
+    path('jsDom', views.jsDom, name = 'jsDom'),
+    path('jsform_validation', views.jsform_validation, name = 'jsform_validation'),
+    path('jquery', views.jquery, name = 'jquery'),
+    path('jquery_validation', views.jquery_validation, name = 'jquery_validation')
 ]

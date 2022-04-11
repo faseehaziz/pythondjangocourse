@@ -47,3 +47,15 @@ def jsfunc(request):
 
 def jsDom(request):
     return render(request,'jsDom.html')
+
+
+def jsform_validation(request):
+    return render(request,'jsform_validation.html')
+
+
+def jquery(request):
+    return render(request,'jquery.html')
+
+
+def jquery_validation(request):
+    return render(request,'jquery_validation.html')
