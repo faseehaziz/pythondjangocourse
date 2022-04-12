@@ -48,18 +48,55 @@
                 <input type="password" class="form-control" id="password2">
                 <small id="b4" class="b"></small>
               </div>
-            <button type="submit" class="btn btn-danger btn-block" id="submit">Submit</button>
+            <button type="submit " class="btn btn-danger btn-block" id="submit">Submit</button>
         </form>
     </div>
 
     <script>
+        status = 1
         $('#submit').submit(function(){
-            username = $('#name').val()
-            phone_number = $('#phone_number').val()
-            email = $('#email').val()
-            password = $('#password').val()
-            password2 = $('#password2').val()
+            if($('#name').val() == ''){
+                $('#b1').html('Name cannot be null')
+                status = 0
+            }
+            else{
+                $('#b1').html('')
+            }
+            
+            if($('#phone_number').val() == ''){
+                $('#b2').html('Phone number cannot be null')
+                status = 0
+            }
+            else if(($('#phone_number').val()).length != 10){
+                $('#b2').html('Enter valid phone number')
+                status = 0
+            }
+            else{
+                $('#b2').html('')
+            }
+
+            if($('#password').val() == ''){
+                $('#b3').html('Password cannot be null')
+                status = 0
+            }
+            else if(($('#password').val()).length < 6){
+                $('#b3').html('Password should contain at least 6 characters')
+                status = 0
+            }
+            else{
+                $('#b3').html('')
+            }
+            
+            if($('#password2').val() != $('#password').val()){
+                $('#b4').html('Password must be same')
+                status = 0
+            }
+            else{
+                $('#b4').html('')
+            }
+
         })
+        
     </script>
 </body>
 </html>
