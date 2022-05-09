@@ -59,3 +59,7 @@ def jquery(request):
 
 def jquery_validation(request):
     return render(request,'jquery_validation.html')
+
+
+def calculator(request):
+    return render(request,'calculator.html')

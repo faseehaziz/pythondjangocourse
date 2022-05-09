@@ -16,5 +16,6 @@ urlpatterns = [
     path('jsDom', views.jsDom, name = 'jsDom'),
     path('jsform_validation', views.jsform_validation, name = 'jsform_validation'),
     path('jquery', views.jquery, name = 'jquery'),
-    path('jquery_validation', views.jquery_validation, name = 'jquery_validation')
+    path('jquery_validation', views.jquery_validation, name = 'jquery_validation'),
+    path('calculator', views.calculator, name = 'calculator'),
 ]

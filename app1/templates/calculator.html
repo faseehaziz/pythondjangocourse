@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        .box{
+            width: 400px;
+            border: 1px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 0px;
+            padding-right: 0px;
+            background-color: rgb(220, 219, 219);
+        }
+        .r{
+            margin-left: 0px;
+            margin-right: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            justify-content: center;
+            /* align-items: center; */
+            margin-top: 30px;
+        }
+        .r1{
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+            padding: 0px;
+        }
+        .col{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .col1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+            padding: 0px;
+        }
+        .b{
+            display: flex;
+            justify-content: center;
+            width: max-content;
+            margin: 0px;
+            padding: 0px;
+            width: 85px;
+        }
+        .numbers{
+            padding:10px 20px;
+            
+        }
+        .out{
+            border: 1px ;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            margin-left: 0px;
+            margin-right: 0px;
+            padding: 0px;
+        }
+        .text1{
+            border: 1px;
+            display: flex;
+            margin: 0px;
+            height: 60px;
+            width: 550px;
+            background-color: rgb(236, 236, 236);
+            font-size: x-large;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container box">
+        <div class="row r1">
+            <div class="col-sm-8 out">
+                <input type="text" id="out" class="text1" readonly>
+            </div>
+        </div>
+        <div class="row r">
+            <div class="col-sm-3 col1">
+                <button type="button" class="btn btn-info numbers b" onclick="clear_data()">AC</button>
+            </div>
+            <div class="col-sm-3 col1">
+                <button type="button" class="btn btn-info numbers b" onclick="del()">DEL</button>
+            </div>
+            <!-- <div class="col-sm-2 col">
+                    
+            </div> -->
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-secondary numbers" onclick="operator('/')">/</button>
+            </div>
+        </div>
+        <div class="row r">
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-light numbers" onclick="num(7)">7</button>
+            </div>
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-light numbers" onclick="num(8)">8</button>
+            </div>
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-light numbers" onclick="num(9)">9</button>
+            </div>
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-secondary numbers" onclick="operator('*')">*</button>
+            </div>
+        </div>
+        <div class="row r">
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-light numbers" onclick="num(4)">4</button>
+            </div>
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-light numbers" onclick="num(5)">5</button>
+            </div>
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-light numbers" onclick="num(6)">6</button>
+            </div>
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-secondary numbers" onclick="operator('-')">-</button>
+            </div>
+        </div>
+        <div class="row r">
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-light numbers" onclick="num(1)">1</button>
+            </div>
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-light numbers" onclick="num(2)">2</button>
+            </div>
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-light numbers" onclick="num(3)">3</button>
+            </div>
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-secondary numbers" onclick="operator('+')">+</button>
+            </div>
+        </div>
+        <div class="row r">
+            <div class="col-sm-2 col">
+                    
+            </div>
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-light numbers" onclick="num(0)">0</button>
+            </div>
+            <div class="col-sm-2 col">
+                    
+            </div>
+            <div class="col-sm-2 col">
+                <button type="button" class="btn btn-danger numbers" onclick="results()">=</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        sign = null
+        function num(x){
+            document.getElementById('out').value += x
+        }
+        
+        function operator(op){
+            sign = op
+            num1 = Number(document.getElementById('out').value)
+            clear_data()
+        }
+
+        function clear_data(){
+            document.getElementById('out').value = ''
+        }
+
+        function del(){
+            str = (document.getElementById('out').value)
+            replaced = str.slice(0, -1) + ''
+            document.getElementById('out').value = replaced
+        }
+
+        function results(){
+            num2 = Number(document.getElementById('out').value)
+            clear_data()
+            if(sign == '+'){
+                result = num1 + num2
+                document.getElementById('out').value = result
+            }
+            else if(sign == '-'){
+                result = num1 - num2
+                document.getElementById('out').value = result
+            }
+            else if(sign == '*'){
+                result = num1 * num2
+                document.getElementById('out').value = result
+            }
+            else if(sign == '/'){
+                result = num1 / num2
+                document.getElementById('out').value = result
+            }
+        }    
+    </script>
+</body>
+</html>

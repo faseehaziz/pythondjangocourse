@@ -8,14 +8,31 @@
 </head>
 <body>
     <script>
-   for(i=0; i<10; i++){
-       if(i == 5){
-           break
-       }
-       console.log(i)
-   }
+//    for(i=0; i<10; i++){
+//        if(i == 5){
+//            break
+//        }
+//        console.log(i)
+//    }
    
    
+    a = [2,5,8,15,6,1,11]
+    lar = a[0]
+    for(i=1; i<a.length; i++){
+        if(a[i] > lar){
+            lar = a[i]
+        }
+    }
+    second = Number.MIN_VALUE
+    for(i=1; i<a.length; i++){
+        if(a[i] > second && a[i] < lar)
+        second = a[i]
+    }
+    console.log(lar,' largest')
+    console.log(second,' second largest')
+
+
+
    
    // i=20
     // do{
