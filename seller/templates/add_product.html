@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 style="text-align: center;">Add Product</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="">Product Name</label> &nbsp;
+        <input type="text" name="name" placeholder="Enter product name" style="width: fit-content; width: 120px">
+        <br><br>
+        <label for="">Description</label> &nbsp;
+        <textarea name="description" id="" cols="30" rows="2" placeholder="Enter product description"></textarea>
+        <br><br>
+        <label for="">Category</label> &nbsp;
+        <select name="category" id="">
+            <option value="" selected disabled>Choose product category</option>
+            <option value="Computers">Computers</option>
+            <option value="Phones">Phones</option>
+        </select>
+        <br><br>
+        <label for="">Weight</label> &nbsp;
+        <input type="text" name="weight" placeholder="Enter product weight">
+        <br><br>
+        <label for="">Quantity</label> &nbsp;
+        <input type="number" name="quantity" id="">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br><br><br>
+    <table border="1px solid black">
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Weight</th>
+            <th>Quantity</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        {% for i in disply %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.category}}</td>
+            <td>{{i.weight}}</td>
+            <td>{{i.quantity}}</td>
+            <td><a href="{% url 'delete_product' i.id %}">Delete</a></td>
+            <td><a href="{% url 'update_product' i.id %}">Update</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

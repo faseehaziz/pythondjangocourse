@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app1',
-    'user',
+    'seller',
+    'ajax',
+    'api',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -59,7 +62,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             BASE_DIR/'app1/templates',
-            BASE_DIR/'user/templates',
+            BASE_DIR/'seller/templates',
+            BASE_DIR/'ajax/templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -81,8 +85,12 @@ WSGI_APPLICATION = 'project1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mvt',
+        'USER': 'postgres',
+        'PORT': '5432',
+        'PASSWORD': '4860',
+        'HOST': 'localhost',
     }
 }
 
@@ -124,6 +132,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 # staticfiles_DIRS=(os.path.join(BASE_DIR, 'static'))
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
